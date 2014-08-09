@@ -9,10 +9,10 @@ Sandbox to try out various class design ideas and algorithms around the idea of 
 
 ## References/Inspriation/Credits
 
-[Turn based game loop](http://journal.stuffwithstuff.com/2014/07/15/a-turn-based-game-loop/)
-[RogueBasin](http://www.roguebasin.com/index.php?title=Ruby)
-[Game Programming Patterns](http://gameprogrammingpatterns.com/)
-[Dungeon building in ruby](http://rubyquiz.com/quiz80.html)
+1. [Turn based game loop](http://journal.stuffwithstuff.com/2014/07/15/a-turn-based-game-loop/)
+2. [RogueBasin](http://www.roguebasin.com/index.php?title=Ruby)
+3. [Game Programming Patterns](http://gameprogrammingpatterns.com/)
+4. [Dungeon building in ruby](http://rubyquiz.com/quiz80.html)
 
 ## Contributing
 

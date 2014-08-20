@@ -1,6 +1,6 @@
 class Action
 
-  def perform
+  def perform(actor)
     return ActionResult.new(ActionResult::SUCCESS)
   end
 

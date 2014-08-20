@@ -1,10 +1,13 @@
+require 'matrix'
+
 require './actor'
 require './action'
 require './action_result'
+require './actions/walk'
 require './actor_input_handler'
 require './direction'
+require './dungeon'
 require './hero'
-require './actions/walk'
 
 class Game
 
@@ -12,8 +15,9 @@ class Game
 
   def initialize(hero = Hero.new)
     @hero = hero
-    @actors = [hero]
-    @actor_iterator = @actors.cycle
+    @dungeon = Dungeon.new
+    @dungeon.add_actor(@hero)
+    @actor_iterator = @dungeon.actors.cycle
     @input_handler = ActorInputHandler.new(self)
   end
 
@@ -25,7 +29,7 @@ class Game
     action = actor.next_action
     return unless action
     while true do
-      result = action.perform
+      result = action.perform(actor)
       return if result.failure?
       break unless result.alternative_action
       action = alternative_action
@@ -33,7 +37,7 @@ class Game
   end
 
   def start
-    @actors.cycle do |actor|
+    @dungeon.actors.cycle do |actor|
       break unless @hero.alive?
       @input_handler.handle_input
       process(actor)
